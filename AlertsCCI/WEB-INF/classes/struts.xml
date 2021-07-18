@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+ "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<constant name="struts.devMode" value="true" />
+	<package name="content" extends="struts-default">
+		
+		<action name="save" class="com.budhh.action.ContentProcessor"  method="saveContent">
+			<result name="success">/jsp/welcome.jsp</result>
+			<result name="failure">error.jsp</result>
+			<result name="input">/index.jsp</result>
+		</action>
+		<action name="display" class="com.budhh.action.ContentProcessor"  method="displayContent">
+			<result name="success">/jsp/display.jsp</result>
+			<result name="failure">error.jsp</result>
+			<result name="input">/index.jsp</result>
+		</action>
+		<action name="listMsg" class="com.budhh.action.ContentProcessor"  method="displayContent">
+			<result name="success">/jsp/display.jsp</result>
+			<result name="failure">error.jsp</result>
+			<result name="input">/index.jsp</result>
+		</action>
+		<action name="login" class="com.budhh.action.UserHistory"  method="login">
+			<result name="success">/index.jsp</result>
+			<result name="failure">/error-login.jsp</result>
+			<result name="input">/index.jsp</result>
+		</action>
+		<action name="getUserDetails" class="com.budhh.action.UserHistory"  method="fetchUserDetails">
+			<result name="success">/jsp/userDetails.jsp</result>
+			<result name="failure">/error-login.jsp</result>
+			<result name="input">/index.jsp</result>
+		</action>
+		<action name="logout" class="com.budhh.action.UserHistory"  method="logout">
+			<result name="success">/login.jsp</result>
+			<result name="failure">/error-login.jsp</result>
+			<result name="input">/index.jsp</result>
+		</action>
+		<action name="UnSubscribe" class="com.budhh.action.UserHistory"  method="unsubs">
+			<result name="success">/success.jsp</result>
+			<result name="failure">/failure.jsp</result>
+			<result name="input">/index.jsp</result>
+		</action>
+		<action name="testmode" class="com.budhh.action.UserHistory"  method="testUser">
+			<result name="success">/succestest.jsp</result>
+			<result name="failure">/failuretest.jsp</result>
+			<result name="input">/index.jsp</result>
+		</action>
+	</package>
+</struts>
